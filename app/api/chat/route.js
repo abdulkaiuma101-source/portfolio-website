@@ -2,10 +2,9 @@ import cvData from '../../../cv-data.json';
 import { GoogleGenAI } from '@google/genai';
 import { NextResponse } from 'next/server';
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
 export async function POST(req) {
   try {
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     const { messages } = await req.json();
     
     const contents = messages.map(m => ({
