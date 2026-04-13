@@ -2,8 +2,8 @@
 import { useForm, ValidationError } from '@formspree/react'
 
 function BrutalForm() {
-  const formId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "missing_id";
-  const [state, handleSubmit] = useForm(formId);
+  // Hardcoded the Formspree key because env vars during Vercel builds cause strict failure.
+  const [state, handleSubmit] = useForm("mpqjvqee");
   
   if (state.succeeded) {
       return (
